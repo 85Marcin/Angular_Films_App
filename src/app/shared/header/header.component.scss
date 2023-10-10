@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background-color: #212121;
+  border-bottom: solid 1px #646161;
+
+  .navigation {
+    ul {
+      display: block;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        display: inline;
+        color: white;
+        margin-right: 15px;
+      }
+    }
+  }
+}
