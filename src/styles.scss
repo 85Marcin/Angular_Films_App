@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "node_modules/modern-normalize/modern-normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@500&family=Lobster&display=swap");
+@import "node_modules/primeflex/primeflex.css";
 
 body {
   font-family: "AR One Sans", sans-serif;
