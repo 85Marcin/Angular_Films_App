@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { FilmsService } from 'src/app/sevices/films.service';
 
 @Component({
   selector: 'app-slider',
@@ -9,15 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class SliderComponent implements OnInit {
   films: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private filmsService: FilmsService) {}
   ngOnInit() {
-    this.getpopularFilms();
+    this.getPopularFilms();
   }
-  getpopularFilms() {
-    this.http
-      .get(
-        'https://api.themoviedb.org/3/movie/popular?api_key=92e327ad16fcc64c71ad3e66dbdabbc5'
-      )
+  getPopularFilms() {
+    this.filmsService
+      .getPopularFilms()
       .subscribe((data) => (this.films = data));
   }
 }
