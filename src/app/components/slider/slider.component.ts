@@ -9,4 +9,5 @@ import { FilmsService } from 'src/app/sevices/films.service';
 export class SliderComponent {
   constructor(private filmsService: FilmsService) {}
   films$ = this.filmsService.getPopularFilms();
+  items = ['Name1', 'Name2', 'Name3', 'Name4'];
 }
