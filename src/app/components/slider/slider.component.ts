@@ -6,16 +6,7 @@ import { FilmsService } from 'src/app/sevices/films.service';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })
-export class SliderComponent implements OnInit {
-  films: any;
-
+export class SliderComponent {
   constructor(private filmsService: FilmsService) {}
-  ngOnInit() {
-    this.getPopularFilms();
-  }
-  getPopularFilms() {
-    this.filmsService
-      .getPopularFilms()
-      .subscribe((data) => (this.films = data));
-  }
+  films$ = this.filmsService.getPopularFilms();
 }
