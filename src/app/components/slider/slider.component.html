@@ -1,6 +1,6 @@
 <div class="slider" *ngIf="films$ | async as films">
-  <div class="slide" *ngFor="let film of films.results; let filmIndex = index">
-    <ng-container *ngIf="filmIndex === slideIndex">
+  <ng-container *ngFor="let film of films.results; let filmIndex = index">
+    <div class="slide" *ngIf="filmIndex === slideIndex" @slideFade>
       <div class="slide-bg">
         <img
           src="{{ 'https://image.tmdb.org/t/p/original' + film.backdrop_path }}"
@@ -26,6 +26,6 @@
         </div>
         <div class="description mt-4">{{ film.overview }}</div>
       </div>
-    </ng-container>
-  </div>
+    </div>
+  </ng-container>
 </div>

@@ -10,6 +10,8 @@ import { FilmListComponent } from './pages/film-list/film-list.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
     FilmListComponent,
     SliderComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
