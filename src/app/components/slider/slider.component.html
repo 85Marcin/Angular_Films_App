@@ -1,34 +1,28 @@
-<div class="slider">
-  <div class="slide">
+<div class="slider" *ngIf="films$ | async as films">
+  <div class="slide" *ngFor="let film of films.results">
     <div class="slide-bg">
       <img
-        src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+        src="{{ 'https://image.tmdb.org/t/p/original' + film.backdrop_path }}"
         alt=""
       />
     </div>
     <div class="slide-pane">
-      <h2 class="title">Slider Title</h2>
+      <h2 class="title">{{ film.title }}</h2>
       <div class="meta">
         <div class="rating">
           <i class="pi pi-star-fill mr-2"></i>
-          <span>8.9</span>
+          <span>{{ film.vote_average }}</span>
           <span>/10</span>
         </div>
       </div>
       <div class="votes mt-3 mb-1">
         <i class="pi pi-users mr-2"></i>
-        <span>4456</span>
+        <span>{{ film.vote_count }}</span>
       </div>
       <div class="release-date">
-        <i class="pi pi-calendar mr-2"></i><span>21.02.2023</span>
+        <i class="pi pi-calendar mr-2"></i><span>{{ film.release_date }}</span>
       </div>
-      <div class="description mt-4">Description</div>
+      <div class="description mt-4">{{ film.overview }}</div>
     </div>
-  </div>
-</div>
-<!-- <pre>{{ films$ | async | json }}</pre> -->
-<div *ngIf="films$ | async as films">
-  <div class="films" *ngFor="let film of films.results">
-    {{ film.title }}
   </div>
 </div>

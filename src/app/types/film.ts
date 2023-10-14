@@ -8,6 +8,7 @@ export type Film = {
   overview: string;
   vote_average: number;
   vote_count: number;
+  release_date: string;
 };
 
 export type FilmsDTO = {
