@@ -6,7 +6,8 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FilmsService } from 'src/app/sevices/films.service';
+import { FilmsService } from '../../sevices/films.service';
+import { imagesBaseUrl } from '../../constants/images-sizes';
 
 @Component({
   selector: 'app-slider',
@@ -22,10 +23,15 @@ import { FilmsService } from 'src/app/sevices/films.service';
 export class SliderComponent implements OnInit {
   constructor(private filmsService: FilmsService) {}
   films$ = this.filmsService.getPopularFilms();
+  baseUrl = imagesBaseUrl;
   slideIndex = 0;
   ngOnInit() {
+    this.changeSlide();
+  }
+  changeSlide() {
     setInterval(() => {
       this.slideIndex += 1;
+      if (this.slideIndex > 10) this.slideIndex = 0;
     }, 5000);
   }
 }
