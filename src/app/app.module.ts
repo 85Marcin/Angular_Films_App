@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './components/banner/banner.component';
+import { ShowItemComponent } from './components/show-item/show-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BannerComponent } from './components/banner/banner.component';
     FilmListComponent,
     SliderComponent,
     BannerComponent,
+    ShowItemComponent,
   ],
   imports: [
     BrowserModule,
