@@ -19,4 +19,9 @@ export class FilmsService {
       `${this.apiURL}/movie/upcoming?api_key=${this.apiKey}`
     );
   }
+  getTopRatedFilms() {
+    return this.http.get<FilmsDTO>(
+      `${this.apiURL}/movie/top_rated?api_key=${this.apiKey}`
+    );
+  }
 }
