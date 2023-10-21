@@ -23,13 +23,16 @@ import { Film } from 'src/app/types/film';
 })
 export class SliderComponent implements OnInit {
   @Input() slides: Film[] = [];
+  @Input() isHeader = false;
 
   constructor() {}
 
   baseUrl = imagesBaseUrl;
   slideIndex = 0;
   ngOnInit() {
-    this.changeSlide();
+    if (!this.isHeader) {
+      this.changeSlide();
+    }
   }
   changeSlide() {
     setInterval(() => {
