@@ -10,6 +10,7 @@ import { map } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  popularFilms$ = this.filmsService.getFilmsByType('popular');
   upcomingFilms$ = this.filmsService.getFilmsByType('upcoming');
   topRatedFilms$ = this.filmsService.getFilmsByType('top_rated');
   popularTVShows$ = this.tvshowsService

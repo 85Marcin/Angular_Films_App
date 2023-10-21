@@ -5,9 +5,10 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { FilmsService } from '../../sevices/films.service';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { imagesBaseUrl } from '../../constants/images-sizes';
+import { Film } from 'src/app/types/film';
 
 @Component({
   selector: 'app-slider',
@@ -21,8 +22,10 @@ import { imagesBaseUrl } from '../../constants/images-sizes';
   ],
 })
 export class SliderComponent implements OnInit {
-  constructor(private filmsService: FilmsService) {}
-  films$ = this.filmsService.getFilmsByType('popular');
+  @Input() slides: Film[] = [];
+
+  constructor() {}
+
   baseUrl = imagesBaseUrl;
   slideIndex = 0;
   ngOnInit() {
