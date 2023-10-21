@@ -1,5 +1,8 @@
+import { FilmsService } from './../../sevices/films.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Film } from 'src/app/types/film';
 
 @Component({
   selector: 'app-show-detail',
@@ -7,12 +10,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./show-detail.component.scss'],
 })
 export class ShowDetailComponent implements OnInit {
-  showID = 0;
-  constructor(private router: ActivatedRoute) {}
+  showID = '';
+  show$: Observable<Film> | null = null;
+  constructor(
+    private router: ActivatedRoute,
+    private filmsService: FilmsService
+  ) {}
 
   ngOnInit() {
     this.router.params.subscribe((params) => {
       this.showID = params['id'];
     });
+    this.show$ = this.filmsService.getFilmById(this.showID);
   }
 }
