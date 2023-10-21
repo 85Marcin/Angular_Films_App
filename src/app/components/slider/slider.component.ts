@@ -22,7 +22,7 @@ import { imagesBaseUrl } from '../../constants/images-sizes';
 })
 export class SliderComponent implements OnInit {
   constructor(private filmsService: FilmsService) {}
-  films$ = this.filmsService.getPopularFilms();
+  films$ = this.filmsService.getFilmsByType('popular');
   baseUrl = imagesBaseUrl;
   slideIndex = 0;
   ngOnInit() {
