@@ -1,4 +1,4 @@
-import { Film } from './film';
+import { Film, Genre } from './film';
 
 export type TVShow = {
   id: number;
@@ -12,6 +12,10 @@ export type TVShow = {
   vote_count: number;
   release_date: string;
   first_air_date: string;
+  original_language: string;
+  runtime: number;
+  status: string;
+  genres: Genre[];
 };
 
 export type TVShowsDTO = {

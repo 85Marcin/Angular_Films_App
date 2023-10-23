@@ -2,6 +2,7 @@ import { FilmsService } from './../../sevices/films.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { IMAGES_SIZES } from 'src/app/constants/images-sizes';
 import { Film } from 'src/app/types/film';
 
 @Component({
@@ -12,6 +13,7 @@ import { Film } from 'src/app/types/film';
 export class ShowDetailComponent implements OnInit {
   showID = '';
   show$: Observable<Film> | null = null;
+  imagesSizes = IMAGES_SIZES;
   constructor(
     private router: ActivatedRoute,
     private filmsService: FilmsService

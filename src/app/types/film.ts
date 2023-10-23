@@ -9,6 +9,10 @@ export type Film = {
   vote_average: number;
   vote_count: number;
   release_date: string;
+  original_language: string;
+  runtime: number;
+  status: string;
+  genres: Genre[];
 };
 
 export type FilmsDTO = {
@@ -16,4 +20,9 @@ export type FilmsDTO = {
   results: Film[];
   total_pages: number;
   total_results: number;
+};
+
+export type Genre = {
+  id: number;
+  name: string;
 };
