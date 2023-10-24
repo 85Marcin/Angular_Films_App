@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Film, FilmsDTO } from '../types/film';
 import { map } from 'rxjs';
+import { Video, VideoDTO } from '../types/video';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,10 @@ export class FilmsService {
     return this.http.get<Film>(
       `${this.apiURL}/movie/${id}?api_key=${this.apiKey}`
     );
+  }
+  getFilmVideo(id: string) {
+    return this.http
+      .get<VideoDTO>(`${this.apiURL}/movie/${id}/videos?api_key=${this.apiKey}`)
+      .pipe(map((data) => data.results));
   }
 }
