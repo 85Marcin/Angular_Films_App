@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './components/banner/banner.component';
 import { ShowItemComponent } from './components/show-item/show-item.component';
 import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
+import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
     BannerComponent,
     ShowItemComponent,
     ShowDetailComponent,
+    VideoEmbedComponent,
   ],
   imports: [
     BrowserModule,
