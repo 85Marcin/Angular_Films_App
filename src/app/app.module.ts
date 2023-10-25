@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TabViewModule } from 'primeng/tabview';
+import { ImageModule } from 'primeng/image';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
     HttpClientModule,
     BrowserAnimationsModule,
     TabViewModule,
+    ImageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
