@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IMAGES_SIZES } from 'src/app/constants/images-sizes';
+import { Actor } from 'src/app/types/cast';
 import { Film } from 'src/app/types/film';
 import { Photo, PhotoDTO } from 'src/app/types/photo';
 import { Video } from 'src/app/types/video';
@@ -18,6 +19,7 @@ export class ShowDetailComponent implements OnInit {
   showVideos$: Observable<Video[]> | null = null;
   imagesSizes = IMAGES_SIZES;
   showPhotos$: Observable<Photo[]> | null = null;
+  actors$: Observable<Actor[]> | null = null;
   constructor(
     private router: ActivatedRoute,
     private filmsService: FilmsService
@@ -30,5 +32,6 @@ export class ShowDetailComponent implements OnInit {
     this.show$ = this.filmsService.getFilmById(this.showID);
     this.showVideos$ = this.filmsService.getFilmVideos(this.showID);
     this.showPhotos$ = this.filmsService.getFilmPhotos(this.showID);
+    this.actors$ = this.filmsService.getFilmCast(this.showID);
   }
 }

@@ -63,6 +63,22 @@
       </ng-container>
     </p-tabPanel>
   </p-tabView>
+  <ng-container *ngIf="actors$ | async as actors">
+    <p-carousel
+      [value]="actors"
+      [numVisible]="6"
+      [numScroll]="3"
+      [circular]="false"
+    >
+      <ng-template let-actor pTemplate="item">
+        <div class="actor">
+          <img [src]="imagesSizes.small + actor.profile_path" />
+          <div>{{ actor.name }}</div>
+          <div>({{ actor.character }})</div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </ng-container>
 </ng-container>
 <p>The film ID is:{{ showID }}</p>
 <pre>

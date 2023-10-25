@@ -4,6 +4,7 @@ import { Film, FilmsDTO } from '../types/film';
 import { map } from 'rxjs';
 import { Video, VideoDTO } from '../types/video';
 import { PhotoDTO } from '../types/photo';
+import { CastDTO } from '../types/cast';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +33,10 @@ export class FilmsService {
     return this.http
       .get<PhotoDTO>(`${this.apiURL}/movie/${id}/images?api_key=${this.apiKey}`)
       .pipe(map((data) => data.backdrops));
+  }
+  getFilmCast(id: string) {
+    return this.http
+      .get<CastDTO>(`${this.apiURL}/movie/${id}/credits?api_key=${this.apiKey}`)
+      .pipe(map((data) => data.cast.slice(0, 24)));
   }
 }
