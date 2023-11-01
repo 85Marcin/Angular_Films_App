@@ -10,4 +10,5 @@ import { Film } from 'src/app/types/film';
 export class ShowItemComponent {
   imageBaseUrl = imagesBaseUrl;
   @Input() showItem: Film | null = null;
+  @Input() showType: 'tv' | 'film' = 'film';
 }

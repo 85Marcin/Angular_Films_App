@@ -30,3 +30,10 @@ export function mapToFilms(tvshows: TVShow[]): Film[] {
     return { ...tvshow, title: tvshow.name };
   });
 }
+
+export function mapToFilm(tvshow: TVShow): Film {
+  return {
+    ...tvshow,
+    title: tvshow.name,
+  };
+}

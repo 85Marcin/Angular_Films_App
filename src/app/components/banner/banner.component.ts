@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Film } from '../../types/film';
+import { Film, SimilarFilm } from '../../types/film';
 
 @Component({
   selector: 'app-banner',
@@ -10,4 +10,6 @@ import { Film } from '../../types/film';
 export class BannerComponent {
   @Input() shows: Film[] = [];
   @Input() title: string = '';
+  @Input() similarShows: SimilarFilm[] = [];
+  @Input() showType: 'tv' | 'film' = 'film';
 }

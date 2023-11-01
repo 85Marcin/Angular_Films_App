@@ -26,3 +26,15 @@ export type Genre = {
   id: number;
   name: string;
 };
+
+export type SimilarFilm = Pick<
+  Film,
+  'id' | 'backdrop_path' | 'title' | 'vote_average'
+>;
+
+export type SimilarFilmDTA = {
+  page: number;
+  results: SimilarFilm[];
+  total_pages: number;
+  total_results: number;
+};

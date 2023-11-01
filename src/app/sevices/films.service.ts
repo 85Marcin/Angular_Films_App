@@ -1,3 +1,4 @@
+import { SimilarFilmDTA } from './../types/film';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Film, FilmsDTO } from '../types/film';
@@ -38,5 +39,12 @@ export class FilmsService {
     return this.http
       .get<CastDTO>(`${this.apiURL}/movie/${id}/credits?api_key=${this.apiKey}`)
       .pipe(map((data) => data.cast.slice(0, 24)));
+  }
+  getFilmSimilar(id: string) {
+    return this.http
+      .get<FilmsDTO>(
+        `${this.apiURL}/movie/${id}/similar?api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results.slice(0, 12)));
   }
 }
