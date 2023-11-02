@@ -12,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { InputTextModule } from 'primeng/inputtext';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './components/banner/banner.component';
 import { ShowItemComponent } from './components/show-item/show-item.component';
@@ -42,6 +42,7 @@ import { ShowsListComponent } from './pages/shows-list/shows-list.component';
     TabViewModule,
     ImageModule,
     CarouselModule,
+    InputTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
