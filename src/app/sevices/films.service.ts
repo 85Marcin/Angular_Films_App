@@ -47,4 +47,11 @@ export class FilmsService {
       )
       .pipe(map((data) => data.results.slice(0, 12)));
   }
+  searchFilms(page: number, searchValue?: string) {
+    return this.http
+      .get<FilmsDTO>(
+        `${this.apiURL}/search/movie?page=${page}&api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results));
+  }
 }
