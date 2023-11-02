@@ -1,1 +1,9 @@
-<p>shows-list works!</p>
+<div class="container">
+  <ng-container *ngIf="showsList$ | async as showsList">
+    <div class="grid">
+      <div class="col-2" *ngFor="let show of showsList">
+        <app-show-item [showItem]="show" />
+      </div>
+    </div>
+  </ng-container>
+</div>

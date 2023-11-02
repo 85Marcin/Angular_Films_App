@@ -50,7 +50,7 @@ export class FilmsService {
   searchFilms(page: number, searchValue?: string) {
     return this.http
       .get<FilmsDTO>(
-        `${this.apiURL}/search/movie?page=${page}&api_key=${this.apiKey}`
+        `${this.apiURL}/search/movie?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
       )
       .pipe(map((data) => data.results));
   }
