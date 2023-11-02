@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FilmListComponent } from './pages/film-list/film-list.component';
+
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,6 +18,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ShowItemComponent } from './components/show-item/show-item.component';
 import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import { ShowsListComponent } from './pages/shows-list/shows-list.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,13 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FilmListComponent,
+    ShowsListComponent,
     SliderComponent,
     BannerComponent,
     ShowItemComponent,
     ShowDetailComponent,
     VideoEmbedComponent,
+    ShowsListComponent,
   ],
   imports: [
     BrowserModule,
