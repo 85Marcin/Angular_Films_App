@@ -17,4 +17,7 @@ export class ShowsListComponent implements OnInit {
   ngOnInit() {
     this.showsList$ = this.filmsService.searchFilms(1, this.searchValue);
   }
+  searchChange() {
+    console.log(this.searchValue);
+  }
 }
