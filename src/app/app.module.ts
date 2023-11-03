@@ -19,6 +19,7 @@ import { ShowItemComponent } from './components/show-item/show-item.component';
 import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { ShowsListComponent } from './pages/shows-list/shows-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ShowsListComponent } from './pages/shows-list/shows-list.component';
     ImageModule,
     CarouselModule,
     InputTextModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,10 +10,11 @@ import { Film } from 'src/app/types/film';
 })
 export class ShowsListComponent implements OnInit {
   showsList$: Observable<Film[]> | null = null;
+  searchValue = '';
 
   constructor(private filmsService: FilmsService) {}
 
   ngOnInit() {
-    this.showsList$ = this.filmsService.searchFilms(1);
+    this.showsList$ = this.filmsService.searchFilms(1, this.searchValue);
   }
 }
