@@ -48,9 +48,10 @@ export class FilmsService {
       .pipe(map((data) => data.results.slice(0, 12)));
   }
   searchFilms(page: number, searchValue?: string) {
+    const uri = searchValue ? 'search/movie' : 'movie/popular';
     return this.http
       .get<FilmsDTO>(
-        `${this.apiURL}/search/movie?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
+        `${this.apiURL}/${uri}?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
       )
       .pipe(map((data) => data.results));
   }
