@@ -1,1 +1,5 @@
-<p>genres works!</p>
+<ng-container *ngIf="genres$ | async as genres">
+  <div class="" *ngFor="let genre of genres">
+    {{ genre.name }}
+  </div>
+</ng-container>

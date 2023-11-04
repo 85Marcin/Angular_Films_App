@@ -26,6 +26,9 @@ export type Genre = {
   id: number;
   name: string;
 };
+export type GenreDTO = {
+  genres: Genre[];
+};
 
 export type SimilarFilm = Pick<
   Film,

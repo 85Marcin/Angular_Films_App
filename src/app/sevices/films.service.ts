@@ -1,4 +1,4 @@
-import { SimilarFilmDTA } from './../types/film';
+import { GenreDTO, SimilarFilmDTA } from './../types/film';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Film, FilmsDTO } from '../types/film';
@@ -52,5 +52,10 @@ export class FilmsService {
     return this.http.get<FilmsDTO>(
       `${this.apiURL}/${uri}?query=${searchValue}&page=${page}&api_key=${this.apiKey}`
     );
+  }
+  getFilmGenres() {
+    return this.http
+      .get<GenreDTO>(`${this.apiURL}/genre/movie/list?api_key=${this.apiKey}`)
+      .pipe(map((data) => data.genres));
   }
 }
