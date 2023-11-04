@@ -20,6 +20,7 @@ import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { ShowsListComponent } from './pages/shows-list/shows-list.component';
 import { FormsModule } from '@angular/forms';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     CarouselModule,
     InputTextModule,
     FormsModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

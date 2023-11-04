@@ -23,4 +23,7 @@ export class ShowsListComponent implements OnInit {
   searchChange() {
     this.getShows(1, this.searchValue);
   }
+  pageChange(event: any) {
+    console.log(event);
+  }
 }
