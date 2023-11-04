@@ -32,12 +32,8 @@ export class ShowDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.router.params.subscribe((params) => {
-      this.showID = params['id'];
-    });
-    this.router.params.subscribe((params) => {
-      this.showType = params['type'];
-    });
+    this.showID = this.router.snapshot.params['id'];
+    this.showType = this.router.snapshot.params['type'];
     if (this.showType === 'film') {
       this.show$ = this.filmsService.getFilmById(this.showID);
       this.showVideos$ = this.filmsService.getFilmVideos(this.showID);

@@ -46,4 +46,10 @@ export class TVShowsService {
       )
       .pipe(map((data) => data.results.slice(0, 12)));
   }
+  searchTVShow(page: number, searchValue?: string) {
+    const uri = searchValue ? '/search/tv' : '/tv/popular';
+    return this.http.get<TVShowsDTO>(
+      `${this.apiURL}${uri}?page=${page}&query=${searchValue}&api_key=${this.apiKey}`
+    );
+  }
 }

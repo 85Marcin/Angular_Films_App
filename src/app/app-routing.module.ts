@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'list',
+    path: 'list/:type',
     component: ShowsListComponent,
   },
   { path: 'show-detail/:id/:type', component: ShowDetailComponent },
