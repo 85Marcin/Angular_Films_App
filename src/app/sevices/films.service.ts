@@ -1,9 +1,9 @@
-import { GenreDTO, SimilarFilmDTA } from './../types/film';
+import { GenreDTO } from './../types/film';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Film, FilmsDTO } from '../types/film';
 import { map } from 'rxjs';
-import { Video, VideoDTO } from '../types/video';
+import { VideoDTO } from '../types/video';
 import { PhotoDTO } from '../types/photo';
 import { CastDTO } from '../types/cast';
 

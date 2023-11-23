@@ -89,7 +89,3 @@
 <ng-container *ngIf="similarFilms$ | async as similarFilms">
   <app-banner [title]="'similarFilms'" [shows]="similarFilms" />
 </ng-container>
-<p>The film ID is:{{ showID }}</p>
-<pre>
-    {{ show$ | async | json }}
-</pre>

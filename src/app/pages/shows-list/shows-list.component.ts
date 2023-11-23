@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PaginatorState } from 'primeng/paginator';
 import { Observable, map } from 'rxjs';
 import { FilmsService } from 'src/app/sevices/films.service';
-import { Film, FilmsDTO } from 'src/app/types/film';
+import { FilmsDTO } from 'src/app/types/film';
 import { mapToFilmsDTO } from 'src/app/types/tvshows';
 
 @Component({

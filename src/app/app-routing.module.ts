@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'list/:type',
     component: ShowsListComponent,
   },
-  { path: 'show-detail/:id/:type', component: ShowDetailComponent },
+  { path: 'detail/:id/:type', component: ShowDetailComponent },
   { path: 'genres', component: GenresComponent },
   { path: 'genres/:genreId', component: GenresComponent },
 ];

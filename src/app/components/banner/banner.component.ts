@@ -10,6 +10,6 @@ import { Film, SimilarFilm } from '../../types/film';
 export class BannerComponent {
   @Input() shows: Film[] = [];
   @Input() title: string = '';
-  @Input() similarShows: SimilarFilm[] = [];
+
   @Input() showType: 'tv' | 'film' = 'film';
 }
